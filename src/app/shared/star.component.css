@@ -1,0 +1,11 @@
+.issue-item__icon {
+    fill: #fff;
+    stroke: #e0e0e0;
+}
+
+.issue-item__icon:hover,
+.issue-item__icon--active {
+    fill: #21233d;
+    fill-rule: evenodd;
+    cursor: pointer;
+}

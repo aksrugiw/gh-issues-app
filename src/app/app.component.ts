@@ -26,7 +26,6 @@ export class AppComponent implements OnInit {
     this._issueService.getOpenIssues()
         .subscribe(issues => {
           this.openIssues = issues;
-          // console.log(this.openIssues.length);
         });
     this._issueService.getClosedIssues()
         .subscribe(issues => {
