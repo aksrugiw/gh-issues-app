@@ -10,7 +10,7 @@ export class IssueService {
   constructor(private _http: Http) { }
 
   getAllIssues() {
-    return this._http.get(this._baseUrl)
+    return this._http.get(this._baseUrl + '?state=all')
       .map(res => res.json());
   }
 

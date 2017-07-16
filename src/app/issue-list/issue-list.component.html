@@ -1,7 +1,7 @@
 <section class="issue-item">
   <header class="issue-item__header">19-07-2016</header>
   <ul>
-    <ng-container *ngFor="let issue of issues">
+    <ng-container *ngFor="let issue of displayedIssues">
       <issue [issue]=issue></issue>
     </ng-container>
   </ul>

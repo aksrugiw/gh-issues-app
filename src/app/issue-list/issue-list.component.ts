@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { IssueService } from '../issue/issue.service'
 
 @Component({
@@ -8,30 +8,40 @@ import { IssueService } from '../issue/issue.service'
   providers: [IssueService]
 
 })
-export class IssueListComponent implements OnInit {
-  private issues: any;
-  @Input() issueType = 'closed';
+export class IssueListComponent implements OnInit, OnChanges {
+  private allIssues: any;
+  private openIssues: any;
+  private closedIssues: any;
+  private displayedIssues: any;
+  @Input() issueType = '';
 
   constructor(private _issueService: IssueService) { }
 
   ngOnInit() {
-    if (this.issueType == 'all') {
-        this._issueService.getAllIssues()
+    this._issueService.getAllIssues()
         .subscribe(issues => {
-          this.issues = issues;
+          this.allIssues = issues;
+          this.displayedIssues = issues;
         });
+    this._issueService.getOpenIssues()
+        .subscribe(issues => {
+          this.openIssues = issues;
+        });
+    this._issueService.getClosedIssues()
+        .subscribe(issues => {
+          this.closedIssues = issues;
+        });
+  }
+
+  ngOnChanges() {
+    if (this.issueType === 'all') {
+      this.displayedIssues = this.allIssues;
     }
-    else if (this.issueType == 'open') {
-        this._issueService.getOpenIssues()
-        .subscribe(issues => {
-          this.issues = issues;
-        });
+    else if (this.issueType === 'open') {
+      this.displayedIssues = this.openIssues;
     }
-    else if (this.issueType == 'closed') {
-        this._issueService.getClosedIssues()
-        .subscribe(issues => {
-          this.issues = issues;
-        });
+    else if (this.issueType === 'closed') {
+      this.displayedIssues = this.closedIssues;
     }
   }
 
