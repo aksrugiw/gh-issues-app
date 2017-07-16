@@ -1,0 +1,9 @@
+.issue-item {
+    margin-bottom: 8px;
+}
+
+.issue-item__header {
+    font-size: 12px;
+    color: #8a8995;
+    margin-bottom: 6px;
+}
