@@ -1,22 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IssueService } from './issue.service'
 
 @Component({
   selector: 'issue',
   templateUrl: './issue.component.html',
-  styleUrls: ['./issue.component.css'],
-  providers: [IssueService]
+  styleUrls: ['./issue.component.css']
 })
 export class IssueComponent implements OnInit {
-  private issues: any;
-
-  constructor(private _issueService: IssueService) { }
+  @Input() issue = null;
+  constructor() { }
 
   ngOnInit() {
-    this._issueService.getAllIssues()
-      .subscribe(issues => {
-        this.issues = issues;
-      });
   }
 
 }

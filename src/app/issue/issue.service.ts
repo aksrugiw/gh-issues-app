@@ -14,4 +14,14 @@ export class IssueService {
       .map(res => res.json());
   }
 
+  getOpenIssues() {
+    return this._http.get(this._baseUrl + '?state=open')
+      .map(res => res.json());
+  }
+
+  getClosedIssues() {
+    return this._http.get(this._baseUrl + '?state=closed')
+      .map(res => res.json());
+  }
+
 }
