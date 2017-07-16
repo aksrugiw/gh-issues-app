@@ -1,0 +1,32 @@
+.issue-item__content {
+  border-width: 1px;
+  border-color: rgb(224, 224, 224);
+  border-style: solid;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  width: 443px;
+  height: 27px;
+  padding: 6px 11px;
+  color: #080606;
+  font-size: 15px;
+  margin-bottom: 5px;
+  line-height: 27px;
+}
+
+.issue-item__icon-container {
+    float: right;
+    margin-top: 2px;
+    margin-right: 1px;
+}
+
+.issue-item__icon {
+    fill: #fff;
+    stroke: #e0e0e0;
+}
+
+.issue-item__icon:hover,
+.issue-item__icon--active {
+    fill: #21233d;
+    fill-rule: evenodd;
+    cursor: pointer;
+}
