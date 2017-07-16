@@ -1,0 +1,136 @@
+.app {
+    margin: 0 auto 3%; 
+    width: 655px;
+    height: 500px;
+    padding: 10px;   
+}
+
+.sidebar {
+    float: left;
+    width: 150px;
+    color: #fff;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    background-color: #101022;
+    opacity: 0.93;
+}
+
+.sidebar__os-btns {
+  background-color: rgb(16, 16, 34);
+  border-top-left-radius: 10px;
+  width: 120px;
+  height: 18px;
+  padding: 11px 15px;
+}
+
+.sidebar__os-btn {
+  border-radius: 50%;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+
+.sidebar__os-btn--margin {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.sidebar__os-btn--green {
+    background-color: #00cd46;
+}
+
+.sidebar__os-btn--orange {
+    background-color: #ffbc1b;
+}
+
+.sidebar__os-btn--red {
+    background-color: #ff594f;
+}
+
+.sidebar__filter {
+    padding: 0px 15px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+}
+
+.sidebar__filter:hover,
+.sidebar__filter:visited,
+.sidebar__filter--active {
+    background-color: #292a48;
+    cursor: pointer;
+}
+
+.sidebar__filter * {
+    vertical-align: middle;
+
+}
+
+.sidebar__link {
+    margin-left: 6px;
+}
+
+.sidebar__icon {
+    fill: #fff;
+    fill-rule: evenodd;
+}
+
+.sidebar__badge {
+    float: right;
+    text-align: right;
+    color: #8a8995;
+    font-family: proxima-nova, sans-serif;
+}
+
+.issue-items {
+    float: left;
+    background-color: #f6f6f6;
+    height: 96%;
+    width: 475px;
+    border-radius: 0 10px 10px 0;
+    padding: 10px 15px;
+    overflow: scroll;
+}
+
+.issue-item {
+    margin-bottom: 8px;
+}
+
+.issue-item__header {
+    font-size: 12px;
+    color: #8a8995;
+    margin-bottom: 6px;
+}
+
+.issue-item__content {
+  border-width: 1px;
+  border-color: rgb(224, 224, 224);
+  border-style: solid;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  width: 443px;
+  height: 27px;
+  padding: 6px 11px;
+  color: #080606;
+  font-size: 15px;
+  margin-bottom: 5px;
+  line-height: 27px;
+}
+
+.issue-item__icon-container {
+    float: right;
+    margin-top: 2px;
+    margin-right: 1px;
+}
+
+.issue-item__icon {
+    fill: #fff;
+    stroke: #e0e0e0;
+}
+
+.issue-item__icon:hover,
+.issue-item__icon--active {
+    fill: #21233d;
+    fill-rule: evenodd;
+    cursor: pointer;
+}
