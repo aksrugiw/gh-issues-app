@@ -7,4 +7,5 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 })
 export class IssueListComponent  {
   @Input() issues;
+  @Input() issuesDate;
 }

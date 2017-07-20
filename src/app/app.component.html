@@ -24,6 +24,6 @@
     </ul>
   </nav>
   <div class="issue-items">
-    <issue-list [issues]="displayedIssues"></issue-list>
+    <issue-list *ngFor="let date of issuesDate; let i = index" [issuesDate]="date" [issues]="displayedIssues[i]"></issue-list>
   </div>
 </main>

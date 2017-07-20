@@ -9,28 +9,59 @@ import { IssueService } from './issue/issue.service'
 
 })
 export class AppComponent implements OnInit {
-  private currentType = '';
+  private currentType = 'all';
   private allIssues = [];
   private openIssues = [];
   private closedIssues = [];
   private displayedIssues = [];
+  private issuesDate = [];
 
   constructor(private _issueService: IssueService) { }
 
   ngOnInit() {
     this._issueService.getAllIssues()
         .subscribe(issues => {
-          this.allIssues = issues;
-          this.displayedIssues = issues;
+          this.allIssues = this.groupData(issues);
+          this.displayedIssues = this.groupData(issues);
+    console.log(this.allIssues);
         });
     this._issueService.getOpenIssues()
         .subscribe(issues => {
-          this.openIssues = issues;
+          this.openIssues = this.groupData(issues);
         });
     this._issueService.getClosedIssues()
         .subscribe(issues => {
-          this.closedIssues = issues;
+          this.closedIssues = this.groupData(issues);
         });
+    
+  }
+
+  groupData(data) {
+    let arr = [];
+    let groupIssues = [];
+    for (let issue of data) {
+      let shortDate = issue.created_at ? issue.created_at.split('T')[0] : null;
+      arr.push( shortDate );
+    }
+    this.issuesDate = Array.from(new Set(arr));
+
+    for (let issue of data) {
+      for (let i=0; i< this.issuesDate.length; i++) {
+        let shortDate = issue.created_at ? issue.created_at.split('T')[0] : null;
+        if(shortDate === this.issuesDate[i]) {
+          if(groupIssues[i]) {
+            groupIssues[i].push(issue);
+          }
+          else {
+            groupIssues[i] = [issue];
+          }
+        }
+        
+      }
+    }
+    
+    return groupIssues;
+    
   }
 
   filterBy(type) {

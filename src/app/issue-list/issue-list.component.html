@@ -1,5 +1,5 @@
-<section class="issue-item">
-  <header class="issue-item__header">19-07-2016</header>
+<section class="issue-item" *ngIf="issues?.length">
+  <header class="issue-item__header">{{issuesDate}}</header>
   <ul>
     <ng-container *ngFor="let issue of issues">
       <issue [issue]=issue></issue>
