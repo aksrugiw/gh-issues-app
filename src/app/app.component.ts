@@ -11,8 +11,11 @@ import { IssueService } from './issue/issue.service'
 export class AppComponent implements OnInit {
   private currentType = 'all';
   private allIssues = [];
+  private allIssuesLength = 0;
   private openIssues = [];
+  private openIssuesLength = 0;
   private closedIssues = [];
+  private closedIssuesLength = 0;
   private displayedIssues = [];
   private issuesDate = [];
 
@@ -22,16 +25,19 @@ export class AppComponent implements OnInit {
     this._issueService.getAllIssues()
         .subscribe(issues => {
           this.allIssues = this.groupData(issues);
+          this.allIssuesLength = issues.length;
           this.displayedIssues = this.groupData(issues);
     console.log(this.allIssues);
         });
     this._issueService.getOpenIssues()
         .subscribe(issues => {
           this.openIssues = this.groupData(issues);
+          this.openIssuesLength = issues.length;
         });
     this._issueService.getClosedIssues()
         .subscribe(issues => {
           this.closedIssues = this.groupData(issues);
+          this.closedIssuesLength = issues.length;
         });
     
   }
