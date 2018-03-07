@@ -2,7 +2,9 @@
     margin: 0 auto 3%; 
     width: 655px;
     height: 500px;
-    padding: 10px;   
+    -webkit-box-shadow: rgba(0,0,0,0.6) 0 0 20px;
+            box-shadow: rgba(0,0,0,0.6) 0 0 20px;
+    border-radius: 10px;
 }
 
 .sidebar {
@@ -11,6 +13,30 @@
     color: #fff;
     height: 100%;
     border-radius: 10px 0 0 10px;
+    background-color: #101022;
+    opacity: 0.93;
+}
+
+.sidebar__background {
+    position: absolute;
+    width: 150px;
+    height: 500px;
+    border-radius: 10px 0 0 10px;
+    background: url('../assets/img/background-blurred.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.sidebar__background:before{
+    content: "";
+    position: absolute;
+    border-radius: 10px 0 0 10px;
+    left: 0;
+    right: 0;
+    top:  0; 
+    bottom: 0;
     background-color: #101022;
     opacity: 0.93;
 }

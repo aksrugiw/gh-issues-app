@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
 ul {
     list-style: none;
     margin: 0;
@@ -10,6 +15,7 @@ ul {
     background: url('./assets/img/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     padding: 5%;
     font-family: Roboto, sans-serif;
 }
