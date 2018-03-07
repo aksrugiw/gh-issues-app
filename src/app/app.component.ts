@@ -9,15 +9,15 @@ import { IssueService } from './issue/issue.service'
 
 })
 export class AppComponent implements OnInit {
-  private currentType = 'all';
-  private allIssues = [];
-  private allIssuesLength = 0;
-  private openIssues = [];
-  private openIssuesLength = 0;
-  private closedIssues = [];
-  private closedIssuesLength = 0;
-  private displayedIssues = [];
-  private issuesDate = [];
+  currentType = 'all';
+  allIssues = [];
+  allIssuesLength = 0;
+  openIssues = [];
+  openIssuesLength = 0;
+  closedIssues = [];
+  closedIssuesLength = 0;
+  displayedIssues = [];
+  issuesDate = [];
 
   constructor(private _issueService: IssueService) { }
 
